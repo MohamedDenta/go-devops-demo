@@ -12,6 +12,6 @@ FROM gcr.io/distroless/base-debian12
 WORKDIR /
 COPY --from=builder /app/server /server
 
-EXPOSE 8080
+EXPOSE 8888
 USER nonroot:nonroot
 CMD ["/server"]
