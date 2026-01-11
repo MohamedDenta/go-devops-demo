@@ -12,9 +12,11 @@ spec:
       labels:
         app: go-devops-demo
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: go-devops-demo
-          image: ghcr.io/mohameddenta/go-devops-demo:latest
+          image: ghcr.io/mohameddenta/go-devops-demo:IMAGE_TAG
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
