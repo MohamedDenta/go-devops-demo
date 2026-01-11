@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-devops-demo-config
+data:
+  PORT: "9090"
+  DB_HOST: "localhost"
+  DB_USER: "admin"

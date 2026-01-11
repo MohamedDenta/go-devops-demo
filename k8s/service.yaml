@@ -6,6 +6,6 @@ spec:
   selector:
     app: go-devops-demo
   ports:
-    - port: 80
-      targetPort: 9090
+    - port: 80 # Service port
+      targetPort: 9090 # Updated to match the new container port
   type: NodePort
