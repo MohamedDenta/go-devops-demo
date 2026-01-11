@@ -16,7 +16,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: go-devops-demo
-          image: ghcr.io/mohameddenta/go-devops-demo:IMAGE_TAG
+          image: ghcr.io/mohameddenta/go-devops-demo
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
