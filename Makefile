@@ -4,6 +4,7 @@ IMAGE=ghcr.io/mohameddenta/go-devops-demo
 
 deploy:
 	@TAG=$$(git rev-parse --short HEAD); \
-	kustomize edit set image $(IMAGE)=$(IMAGE):$$TAG; \
-	kubectl apply -k k8s/; \
+	kubectl kustomize k8s/base/ | \
+	sed "s|$(IMAGE):[a-z0-9]*|$(IMAGE):$$TAG|" | \
+	kubectl apply -f -; \
 	kubectl rollout status deployment go-devops-demo
